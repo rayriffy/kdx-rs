@@ -105,10 +105,17 @@ jobs:
         path: ${{ matrix.asset_name }}
         retention-days: 30
 
-    - name: Get binary info
+    - name: Get binary info (Unix)
+      if: runner.os != 'Windows'
       run: |
-        ls -la ${{ matrix.asset_name }} || dir ${{ matrix.asset_name }}
+        ls -la ${{ matrix.asset_name }}
         file ${{ matrix.asset_name }} || echo "File command not available"
+
+    - name: Get binary info (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        dir ${{ matrix.asset_name }}
+        echo "File info displayed above"
 
   # Create a release with all artifacts if this is a release event
   release:
