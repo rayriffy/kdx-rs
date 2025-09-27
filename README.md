@@ -21,6 +21,7 @@ This project includes GitHub Actions workflows that automatically build binaries
 - **Linux AMD64** (`x86_64-unknown-linux-gnu`) 
 - **Linux ARM64** (`aarch64-unknown-linux-gnu`)
 - **Windows AMD64** (`x86_64-pc-windows-msvc`)
+- **Windows ARM64** (`aarch64-pc-windows-msvc`)
 
 Binaries are automatically built on:
 - Every push to `main`/`master` branch

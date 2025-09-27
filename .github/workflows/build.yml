@@ -38,6 +38,12 @@ jobs:
             os: windows-latest
             binary_name: kdx-rs.exe
             asset_name: kdx-rs-windows-amd64.exe
+          
+          # Windows ARM64
+          - target: aarch64-pc-windows-msvc
+            os: windows-latest
+            binary_name: kdx-rs.exe
+            asset_name: kdx-rs-windows-arm64.exe
 
     steps:
     - name: Checkout code
@@ -128,5 +134,6 @@ jobs:
           artifacts/kdx-rs-linux-amd64/kdx-rs-linux-amd64
           artifacts/kdx-rs-linux-arm64/kdx-rs-linux-arm64
           artifacts/kdx-rs-windows-amd64.exe/kdx-rs-windows-amd64.exe
+          artifacts/kdx-rs-windows-arm64.exe/kdx-rs-windows-arm64.exe
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
