@@ -95,6 +95,7 @@ jobs:
       run: |
         cp target/${{ matrix.target }}/release/${{ matrix.binary_name }} ${{ matrix.asset_name }}
         strip ${{ matrix.asset_name }} || true
+        chmod +x ${{ matrix.asset_name }}
 
     - name: Prepare binary (Windows)
       if: runner.os == 'Windows'
